@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            Form Validation
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="onSave()" #loginForm="ngForm">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input class="form-control" type="text" name="firstName" [(ngModel)]="firstName" #firstNameId="ngModel" required />
+                </div>
+                <div class="error-block">
+                    <div *ngIf="loginForm.submitted && firstNameId.invalid || firstNameId.touched">
+                        This field is invalid
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input class="form-control" type="text" name="lastName" [(ngModel)]="lastName" #lastNameId="ngModel" required />
+                </div>
+                <div class="error-block">
+                        <div *ngIf="loginForm.submitted && lastNameId.invalid || lastNameId.touched">
+                            This field is invalid
+                        </div>
+                    </div>
+                <div class="form-group">
+                    <label>Contact</label>
+                    <input class="form-control" type="text" name="contact" [(ngModel)]="contact" #contactId="ngModel" required/>
+                </div>
+                <div class="error-block">
+                        <div *ngIf="loginForm.submitted && contactId.invalid || contactId.touched">
+                            This field is invalid
+                        </div>
+                    </div>
+                <div class="form-group">
+                    <label>E Mail</label>
+                    <input class="form-control" type="text" name="email" [(ngModel)]="email" #emailId="ngModel" required />
+                </div>
+                <div class="error-block">
+                        <div *ngIf="loginForm.submitted && emailId.invalid || emailId.touched">
+                            This field is invalid
+                        </div>
+                    </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input class="form-control" type="text" name="city" [(ngModel)]="city" #cityId="ngModel" required />
+                </div>
+                <div class="error-block">
+                        <div *ngIf="loginForm.submitted && cityId.invalid || cityId.touched">
+                            This field is invalid
+                        </div>
+                    </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
