@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            Reactive Form Validation
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="onSave()" FormGroup="loginForm">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input class="form-control" type="text" FormControlName="firstName" />
+                </div>
+                <div class="error-block">
+                    <!-- This field is invalid -->
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input class="form-control" type="text" FormControlName="lastName" />
+                </div>
+                <div class="error-block">
+                    This field is invalid
+                    </div>
+                <div class="form-group">
+                    <label>Contact</label>
+                    <input class="form-control" type="text" FormControlName="contact"/>
+                </div>
+                <div class="error-block">
+                        <!-- <div *ngIf="loginForm.submitted && contactId.invalid || contactId.touched"> -->
+                            This field is invalid
+                        <!-- </div> -->
+                    </div>
+                <div class="form-group">
+                    <label>E Mail</label>
+                    <input class="form-control" type="text" FormControlName="email" />
+                </div>
+                <div class="error-block">
+                        <!-- <div *ngIf="loginForm.submitted && emailId.invalid || emailId.touched"> -->
+                            This field is invalid
+                        <!-- </div> -->
+                    </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input class="form-control" type="text" FormControlName="city"/>
+                </div>
+                <div class="error-block">
+                        <!-- <div *ngIf="loginForm.submitted && cityId.invalid || cityId.touched"> -->
+                            This field is invalid
+                        <!-- </div> -->
+                    </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

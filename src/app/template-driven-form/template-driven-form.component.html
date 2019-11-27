@@ -10,7 +10,7 @@
                     <input class="form-control" type="text" name="firstName" [(ngModel)]="firstName" #firstNameId="ngModel" required />
                 </div>
                 <div class="error-block">
-                    <div *ngIf="loginForm.submitted && firstNameId.invalid || firstNameId.touched">
+                    <div *ngIf="loginForm.submitted && firstNameId.invalid">
                         This field is invalid
                     </div>
                 </div>
