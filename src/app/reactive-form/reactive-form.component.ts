@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-
+import { Router, ActivatedRoute } from "@angular/router"
 @Component({
   selector: 'app-reactive-form',
   templateUrl: './reactive-form.component.html',
@@ -10,7 +10,15 @@ export class ReactiveFormComponent implements OnInit {
 
   loginForm:FormGroup
   
-  constructor() { }
+  constructor( private router : Router, private route : ActivatedRoute) { }
+
+  getHome(){
+  this.router.navigate(['home'])
+  }
+
+  reload(){
+    this.router.navigate(['/home/reactive'], {relativeTo: this.route})
+  }
 
   ngOnInit() {
 
