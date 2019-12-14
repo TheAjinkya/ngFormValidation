@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms'
+import { DataService } from '../data.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-template-driven-form',
@@ -16,9 +18,13 @@ export class TemplateDrivenFormComponent implements OnInit {
   email
   city
 
-  constructor() { }
+  users:any = []
+
+  constructor(public myService : DataService) { }
 
   ngOnInit() {
+
+    
   }
 
   onSubmit(formValue:NgForm){
@@ -27,6 +33,14 @@ export class TemplateDrivenFormComponent implements OnInit {
 
   onSave(){
     console.log(this.myForm)
+  }
+
+  getData(){
+    this.myService.getEmployees().subscribe(response => {
+      console.log("response", response)
+      this.users = response
+      console.log("Users", this.users)
+    })
   }
 
 }
