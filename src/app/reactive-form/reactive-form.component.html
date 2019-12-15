@@ -14,51 +14,44 @@
             Reactive Form Validation
         </div>
         <div class="card-body">
-            <form (ngSubmit)="onSave()" FormGroup="loginForm">
+            <form (ngSubmit)="onSave()" [formGroup]="loginForm">
                 <div class="form-group">
                     <label>First Name</label>
-                    <input class="form-control" type="text" FormControlName="firstName" />
-                </div>
-                <div *ngIf="loginForm.submitted && emailId.invalid">
-                    THis field is required
-                </div>
-                <div class="error-block">
-                    <!-- This field is invalid -->
+                    <input class="form-control" type="text" formControlName="firstName" />
+                    <div *ngIf="submitted && loginForm.controls.firstName.errors.required" class="invalid-feedback d-block">
+                        First Name is required
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Last Name</label>
-                    <input class="form-control" type="text" FormControlName="lastName" />
+                    <input class="form-control" type="text" formControlName="lastName" />
                 </div>
-                <div class="error-block">
-                    This field is invalid
-                </div>
-                <div class="form-group">
+                <div *ngIf="submitted && loginForm.controls.lastName.invalid" class="invalid-feedback d-block">
+                        Last Name is required
+                    </div>
+                    <div class="form-group">
                     <label>Contact</label>
-                    <input class="form-control" type="text" FormControlName="contact" />
+                    <input class="form-control" type="text" formControlName="contact" />
                 </div>
-                <div class="error-block">
-                    <!-- <div *ngIf="loginForm.submitted && contactId.invalid || contactId.touched"> -->
-                    This field is invalid
-                    <!-- </div> -->
-                </div>
+                <div *ngIf="submitted && loginForm.controls.contact.invalid" class="invalid-feedback d-block">
+                        Contact is required
+                    </div>
+    
                 <div class="form-group">
                     <label>E Mail</label>
-                    <input class="form-control" type="text" FormControlName="email" />
+                    <input class="form-control" type="text" formControlName="email" />
                 </div>
-                <div class="error-block">
-                    <!-- <div *ngIf="loginForm.submitted && emailId.invalid || emailId.touched"> -->
-                    This field is invalid
-                    <!-- </div> -->
-                </div>
+                <div *ngIf="submitted && loginForm.controls.email.invalid" class="invalid-feedback d-block">
+                        Email is required
+                    </div>
+    
                 <div class="form-group">
                     <label>City</label>
-                    <input class="form-control" type="text" FormControlName="city" />
+                    <input class="form-control" type="text" formControlName="city" />
                 </div>
-                <div class="error-block">
-                    <!-- <div *ngIf="loginForm.submitted && cityId.invalid || cityId.touched"> -->
-                    This field is invalid
-                    <!-- </div> -->
-                </div>
+                <div *ngIf="submitted && loginForm.controls.city.invalid" class="invalid-feedback d-block">
+                        City is required
+                    </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>

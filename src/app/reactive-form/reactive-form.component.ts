@@ -9,6 +9,7 @@ import { Router, ActivatedRoute } from "@angular/router"
 export class ReactiveFormComponent implements OnInit {
 
   loginForm:FormGroup
+  submitted = false
   
   constructor( private router : Router, private route : ActivatedRoute) { }
 
@@ -32,6 +33,7 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   onSave(){
+    this.submitted = true
     console.log(this.loginForm)
   }
 
