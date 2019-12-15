@@ -18,8 +18,8 @@
                 <div class="form-group">
                     <label>First Name</label>
                     <input class="form-control" type="text" formControlName="firstName" />
-                    <div *ngIf="submitted && loginForm.controls.firstName.errors.required" class="invalid-feedback d-block">
-                        First Name is required
+                    <div *ngIf="submitted && loginForm.controls.firstName.errors" class="invalid-feedback d-block">
+                        <div *ngIf="loginForm.controls.firstName.errors.required">First Name is required</div>
                     </div>
                 </div>
                 <div class="form-group">
